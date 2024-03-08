@@ -39,5 +39,18 @@ public class CustomListTest {
         assertTrue(customList.hasCity(city1));
         assertFalse(customList.hasCity(city2)); // This assertion will fail initially
     }
+
+    @Test
+    public void testDeleteCity() {
+        // Arrange
+        City city1 = new City("City 1", "Province 1");
+        customList.addCity(city1);
+
+        // Act
+        customList.deleteCity(city1);
+
+        // Assert
+        assertFalse(customList.hasCity(city1)); // This assertion will fail initially
+    }
 }
 

@@ -54,8 +54,13 @@ public class CustomList extends ArrayAdapter<City> {
     }
 
     public boolean hasCity(City city) {
-        // Initially return false for all cases
-        return false;
+        // Iterate through the list of cities and check if the given city is present
+        for (City c : cities) {
+            if (c.equals(city)) {
+                return true; // Return true if the city is found
+            }
+        }
+        return false; // Return false if the city is not found
     }
 
 }

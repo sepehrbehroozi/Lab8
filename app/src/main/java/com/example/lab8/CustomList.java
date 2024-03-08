@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class CustomList extends ArrayAdapter<City> {
 
@@ -64,6 +65,14 @@ public class CustomList extends ArrayAdapter<City> {
     }
 
     public void deleteCity(City city) {
-        // Implementation for deleteCity method...
+        // Iterate through the list of cities and remove the matching city
+        Iterator<City> iterator = cities.iterator();
+        while (iterator.hasNext()) {
+            City c = iterator.next();
+            if (c.equals(city)) {
+                iterator.remove(); // Remove the city if it matches
+                break; // Exit the loop after removing the city
+            }
+        }
     }
 }

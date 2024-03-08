@@ -52,5 +52,17 @@ public class CustomListTest {
         // Assert
         assertFalse(customList.hasCity(city1)); // This assertion will fail initially
     }
+
+    @Test
+    public void testCountCities() {
+        // Arrange
+        City city1 = new City("City 1", "Province 1");
+        City city2 = new City("City 2", "Province 2");
+        customList.addCity(city1);
+        customList.addCity(city2);
+
+        // Assert
+        assertEquals(2, customList.countCities()); // This assertion will fail initially
+    }
 }
 
